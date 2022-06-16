@@ -8,23 +8,23 @@
 
         public string? NomeCartao { get; set; }
 
-    public CartaoCredito(long pNumero, string pDataValidade, string pNomeCartao)
+    public CartaoCredito(long numero, string dataValidade, string nomeCartao)
         {
-            Numero = pNumero;
-            DataValidade = pDataValidade; ;
-            NomeCartao = pNomeCartao;
+            Numero = numero;
+            DataValidade = dataValidade; ;
+            NomeCartao = nomeCartao;
         }
     
     public static CartaoCredito Ler()
         {
-            long pNumero = 0;
+            long numero = 0;
             bool verificador = true;
             while (true)
             {
                 Console.Write("Digite o numero do cartão");
-                pNumero = long.Parse(Console.ReadLine().Trim());
+                numero = long.Parse(Console.ReadLine().Trim());
 
-                if (pNumero > 13 && pNumero < 16)
+                if (numero > 13 && numero < 16)
                 {
                     verificador = false;
                 }
@@ -32,12 +32,12 @@
             }
 
             Console.Write("Digite a data de validade do cartão");
-            string? pDataValidade = Console.ReadLine().Trim();
+            string? dataValidade = Console.ReadLine().Trim();
 
             Console.WriteLine("Digite o nome escrito no cartão");
-            string? pNomeCartao = Console.ReadLine().Trim();
+            string? nomeCartao = Console.ReadLine().Trim();
 
-            return new CartaoCredito(pNumero, pDataValidade, pNomeCartao);
+            return new CartaoCredito(numero, dataValidade, nomeCartao);
         }
 
 
