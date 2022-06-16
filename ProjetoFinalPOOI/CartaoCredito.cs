@@ -2,55 +2,95 @@
 {
     public class CartaoCredito
     {
-        public long Numero { get; set; }     
+        public long Numero { get; set; }
 
-        public string? DataValidade { get; set; }  
+        public DateOnly? DataValidade { get; set; }
 
         public string? NomeCartao { get; set; }
 
-    public CartaoCredito(long numero, string dataValidade, string nomeCartao)
+        public CartaoCredito(long numero, DateOnly dataValidade, string nomeCartao)
         {
             Numero = numero;
-            DataValidade = dataValidade; ;
+            DataValidade = dataValidade;
             NomeCartao = nomeCartao;
         }
-    
-    public static CartaoCredito Ler()
+
+        public static CartaoCredito Ler()
         {
             long numero = 0;
-            bool verificador = true;
-            while (true)
+            bool verificador = false;
+            do
             {
                 Console.Write("Digite o numero do cartão");
                 numero = long.Parse(Console.ReadLine().Trim());
 
                 if (numero > 13 && numero < 16)
                 {
-                    verificador = false;
+                    verificador = true;
                 }
 
-            }
+            } while (verificador);
 
-            Console.Write("Digite a data de validade do cartão");
-            string? dataValidade = Console.ReadLine().Trim();
+            DateOnly dataValidade;
+            bool verificador2 = false;
+            do
+            {
+                Console.Write("Digite a data de validade do cartão");
+                dataValidade = DateOnly.Parse(Console.ReadLine());
 
-            Console.WriteLine("Digite o nome escrito no cartão");
-            string? nomeCartao = Console.ReadLine().Trim();
+                if (dataValidade.Year > DateTime.Now.Year)
+                {
+                    verificador2 = true;
+                }
+            } while (verificador2);
+
+            string nomeCartao;
+            do
+            {
+                Console.WriteLine("Digite o nome escrito no cartão");
+                nomeCartao = Console.ReadLine().Trim();
+            }while(nomeCartao.Length == 0);
+
 
             return new CartaoCredito(numero, dataValidade, nomeCartao);
         }
 
 
-    public void AlterarCadastro()
+        public void AlterarCadastro()
         {
-            Console.Write("Digite o número do cartão");
-            Numero = long.Parse(Console.ReadLine().Trim());
+            long numero = 0;
+            bool verificador = true;
+            do
+            {
+                Console.Write("Digite o número do cartão");
+                Numero = long.Parse(Console.ReadLine().Trim());
 
-            Console.Write("Digite a data de validade do cartão");
-            DataValidade = Console.ReadLine().Trim();
-          
-            Console.Write("Digite o nome escrito no cartão");
-            NomeCartao = Console.ReadLine().Trim();
+                if (Numero > 13 && Numero < 16)
+                {
+                    verificador = true;
+                }
+
+            } while (verificador);
+
+            bool verificador2 = false;
+            do
+            {
+                Console.Write("Digite a data de validade do cartão");
+                DataValidade = DateOnly.Parse(Console.ReadLine());
+
+                if (DataValidade.Value.Year > DateTime.Now.Year)
+                {
+                    verificador2 = true;
+                }
+            } while (verificador2);
+
+            do
+            {
+                Console.Write("Digite o nome escrito no cartão");
+                NomeCartao = Console.ReadLine().Trim();
+            } while (NomeCartao.Length == 0);
+
+
         }
 
     }
