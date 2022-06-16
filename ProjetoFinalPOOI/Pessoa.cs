@@ -35,15 +35,13 @@
         }
         private static DateOnly LerDataNascimento()
         {
-            string data;
-            DateOnly dataNascimento = new DateOnly();
-            Console.Write("Data de nascimento dd/MM/yyyy: ");
-            data = Console.ReadLine();
-            if (!DateOnly.TryParse(data, out dataNascimento))
+            DateOnly dataNascimento;
+            Console.Write("Data de nascimento dd/mm/aaaa: ");
+            if (!DateOnly.TryParse(Console.ReadLine(), out dataNascimento) || dataNascimento > new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day))
             {
                 Console.WriteLine("Data inválida!");
             }
-            return new DateOnly();
+            return dataNascimento;
         }
         private static string LerCategoria()
         {
