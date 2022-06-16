@@ -1,6 +1,6 @@
 ﻿namespace ProjetoFinalPOOI
 {
-    internal class Pessoa
+    public class Pessoa
     {
         public string Nome { get; }
         DateOnly DataNascimento { get; }
