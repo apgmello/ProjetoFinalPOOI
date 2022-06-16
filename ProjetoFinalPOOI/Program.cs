@@ -1,4 +1,9 @@
-﻿int opcao;
+﻿
+using ProjetoFinalPOOI;
+
+var pessoa = Pessoa.Ler();
+
+int opcao;
 
 //uns objetos aqui
 
