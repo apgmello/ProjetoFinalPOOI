@@ -17,10 +17,21 @@
     
     public static CartaoCredito Ler()
         {
-            Console.WriteLine("Digite o numero do cartão");
-            long pNumero = long.Parse(Console.ReadLine().Trim());
+            long pNumero = 0;
+            bool verificador = true;
+            while (true)
+            {
+                Console.Write("Digite o numero do cartão");
+                pNumero = long.Parse(Console.ReadLine().Trim());
 
-            Console.WriteLine("Digite a data de validade do cartão");
+                if (pNumero > 13 && pNumero < 16)
+                {
+                    verificador = false;
+                }
+
+            }
+
+            Console.Write("Digite a data de validade do cartão");
             string? pDataValidade = Console.ReadLine().Trim();
 
             Console.WriteLine("Digite o nome escrito no cartão");
@@ -32,13 +43,13 @@
 
     public void AlterarCadastro()
         {
-            Console.WriteLine("Digite o número do cartão");
+            Console.Write("Digite o número do cartão");
             Numero = long.Parse(Console.ReadLine().Trim());
 
-            Console.WriteLine("Digite a data de validade do cartão");
+            Console.Write("Digite a data de validade do cartão");
             DataValidade = Console.ReadLine().Trim();
           
-            Console.WriteLine("Digite o nome escrito no cartão");
+            Console.Write("Digite o nome escrito no cartão");
             NomeCartao = Console.ReadLine().Trim();
         }
 
