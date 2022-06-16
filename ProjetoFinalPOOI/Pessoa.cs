@@ -33,37 +33,100 @@
             string categoria = LerCategoria();
             return new Pessoa(nome, dataNascimento, cpf, endereco, telefone, cnh, categoria); //retorna uma instancia de Pessoa
         }
-
         private static DateOnly LerDataNascimento()
         {
+            string data;
+            DateOnly dataNascimento = new DateOnly();
+            Console.Write("Data de nascimento dd/MM/yyyy: ");
+            data = Console.ReadLine();
+            if (!DateOnly.TryParse(data, out dataNascimento))
+            {
+                Console.WriteLine("Data inválida!");
+            }
             return new DateOnly();
         }
-
         private static string LerCategoria()
         {
-            return "";
-        }
+            string categoria;
+            do
+            {
+                Console.Write("Categoria CNH: ");
+                categoria = Console.ReadLine().Trim().ToUpper();
+                if (categoria != "A" && categoria != "AB")
+                {
+                    Console.WriteLine("Categoria inválida!");
+                }
+            } while (categoria != "A" && categoria != "AB");
 
+            return categoria;
+        }
         private static long LerCnh()
         {
-            return 0;
+            long numero;
+            string documento;
+            do
+            {
+                Console.Write("CNH somente números: ");
+                documento = Console.ReadLine();
+                if (!long.TryParse(documento, out numero))
+                {
+                    Console.WriteLine("Número inválido");
+                }
+            } while (documento.Length < 11);
+            return numero;
         }
-
         private static string LerTelefone()
         {
-            return "";
-        }
+            int telefone;
+            string formato;
+            do
+            {
+                Console.Write("Telefone somente números: ");
+                formato = Console.ReadLine();
+                if (!int.TryParse(formato, out telefone))
+                {
+                    Console.WriteLine("Telefone inválido");
+                }
+            } while (formato.Length < 11);
+            formato.Insert(0, "(");
+            formato.Insert(3, ")");
+            formato.Insert(9, "-");
 
+            return formato;
+        }
         private static string LerEndereco()
         {
-            return "";
-        }
+            string endereco;
+            string[] palavras;
+            do
+            {
+                Console.Write("Endereço: ");
+                endereco = Console.ReadLine();
+                palavras = endereco.Trim().Split(" ");
+                if (palavras.Length < 2)
+                {
+                    Console.WriteLine("Campo obrigatório!");
+                }
+            } while (palavras.Length < 2);
 
+            return endereco;
+        }
         private static long LerCpf()
         {
-            return 0;
-        }
+            long numero;
+            string documento;
+            do
+            {
+                Console.Write("CPF somente números: ");
+                documento = Console.ReadLine();
+                if (!long.TryParse(documento, out numero))
+                {
+                    Console.WriteLine("Número inválido");
+                }
+            } while (documento.Length < 11);
 
+            return numero;
+        }
         private static string LerNome()
         {
             string? nome;
@@ -78,9 +141,8 @@
                     Console.WriteLine("O campo nome deve conter nome e sobrenome!");
                 }
             } while (palavras.Length < 2);
-            
+
             return nome;
         }
-        
     }
 }
