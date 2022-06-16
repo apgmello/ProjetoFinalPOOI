@@ -2,8 +2,12 @@
 using ProjetoFinalPOOI;
 
 var pessoa = Pessoa.Ler();
+var carro = Carro.Ler();
 
 int opcao;
+
+
+
 
 //uns objetos aqui
 
