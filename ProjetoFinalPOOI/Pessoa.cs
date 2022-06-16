@@ -5,7 +5,6 @@
         public string Nome { get; }
         DateOnly DataNascimento { get; }
         public long Cpf { get; }
-        public long Rg { get; }
         public string Endereco { get; }
         public string Telefone { get; }
         public long Cnh { get; }
@@ -13,12 +12,11 @@
 
         public Pessoa() { }
 
-        public Pessoa(string nome, DateOnly dataNascimento, long cpf, long rg, string endereco, string telefone, long cnh, string categoria)
+        public Pessoa(string nome, DateOnly dataNascimento, long cpf, string endereco, string telefone, long cnh, string categoria)
         {
             Nome = nome;
             DataNascimento = dataNascimento;
             Cpf = cpf;
-            Rg = rg;
             Endereco = endereco;
             Telefone = telefone;
             Cnh = cnh;
@@ -29,12 +27,11 @@
             string nome = LerNome();
             DateOnly dataNascimento = LerDataNascimento();
             long cpf = LerCpf();
-            long rg = LerRg();
             string endereco = LerEndereco();
             string telefone = LerTelefone();
             long cnh = LerCnh();
             string categoria = LerCategoria();
-            return new Pessoa(nome, dataNascimento, cpf, rg, endereco, telefone, cnh, categoria); //retorna uma instancia de Pessoa
+            return new Pessoa(nome, dataNascimento, cpf, endereco, telefone, cnh, categoria); //retorna uma instancia de Pessoa
         }
 
         private static DateOnly LerDataNascimento()
@@ -60,11 +57,6 @@
         private static string LerEndereco()
         {
             return "";
-        }
-
-        private static long LerRg()
-        {
-            return 0;
         }
 
         private static long LerCpf()
