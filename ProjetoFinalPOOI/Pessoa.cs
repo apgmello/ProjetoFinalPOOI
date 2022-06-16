@@ -41,6 +41,7 @@
             {
                 Console.WriteLine("Data inválida!");
             }
+
             return dataNascimento;
         }
         private static string LerCategoria()
@@ -71,6 +72,7 @@
                     Console.WriteLine("Número inválido");
                 }
             } while (documento.Length < 11);
+
             return numero;
         }
         private static string LerTelefone()
