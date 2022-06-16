@@ -4,7 +4,7 @@
     {
         public long nºCartaoCredito { get; set; }     
 
-        public DateOnly DataValidade { get; set; }  
+        public string DataValidade { get; set; }  
 
 
         public string? NomeCartao { get; set; }
@@ -15,6 +15,7 @@
             nºCartaoCredito = long.Parse(Console.ReadLine());
 
             Console.WriteLine("Insira a data de validade do cartão");
+            DataValidade = Console.ReadLine();
           
 
             Console.WriteLine("Insira o nome escrito no cartão");
