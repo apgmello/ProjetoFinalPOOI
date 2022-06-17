@@ -11,7 +11,7 @@
         public int Ano { get; }
         public long Km { get; }
         public string Modelo { get; }
-        public bool alugado { get; }
+        public bool Alugado { get; set; } = false; //***
 
 
         public Carro(string placa, string categoria, int ano, long km, string modelo, bool alugado)
@@ -23,7 +23,7 @@
             Ano = ano;
             Km = km;
             Modelo = modelo;
-            alugado = alugado;
+            Alugado = alugado;
 
         }
 
@@ -48,7 +48,7 @@
             return categoria;
         }
 
-        public static Carro Ler(List <string> testeplacas)
+        public static Carro Ler(List<string> testeplacas) // substituir testeplacas pela lista final*
         {
             string placa = LerPlaca(testeplacas);
             string categoria = LerCategoria();
@@ -60,7 +60,7 @@
             return new Carro(placa, categoria, ano, km, modelo, alugado);
         }
 
-        public static string LerPlaca(List <string> testeplacas)
+        public static string LerPlaca(List<string> testeplacas) //testeplacas*
         {
             string valor = "";
             bool valida = true;
@@ -72,18 +72,18 @@
                 Console.Write("Insira a placa do novo veículo (XXX0000): ");
                 valor = Console.ReadLine();
 
-                
+
 
                 if (valor.Length != 7)
                 {
                     Console.WriteLine("Placa inválida.");
                     valida = false;
- 
+
                 }
 
                 else
                 {
-                    foreach (var veiculo in testeplacas)
+                    foreach (var veiculo in testeplacas) //testeplacas*
                     {
                         if (veiculo.ToUpper() == valor.ToUpper())
                         {
@@ -169,7 +169,7 @@
                 Console.Write("Insira a quilometragem do veículo: ");
                 valida = long.TryParse(Console.ReadLine(), out valor);
 
-            } while (!valida && valor<0);
+            } while (!valida && valor < 0);
 
 
             return valor;
@@ -178,7 +178,6 @@
         public static string LerModelo()
         {
             string valor = "";
-            string[] palavra;
 
             do
             {
@@ -199,12 +198,8 @@
             Console.WriteLine("Ano: " + Ano);
             Console.WriteLine("Kilometragem: " + Km);
             Console.WriteLine("Modelo: " + Modelo);
-            Console.WriteLine("Alugado: " + (alugado ? "Sim" : "Não"));
-
+            Console.WriteLine("Alugado: " + (Alugado ? "Sim" : "Não"));
         }
-
-
-
     }
 
 }
