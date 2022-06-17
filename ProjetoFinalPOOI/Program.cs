@@ -83,6 +83,7 @@ do
                         opcao = 0;
                         Console.Clear();
                         Console.WriteLine("Alugar carro:\n");
+                        Aluguel.Alugar();
 
                         //Inserir forma de alugar carro
                         Console.WriteLine("\nVeículo Alugado com sucesso!\n");
@@ -92,8 +93,9 @@ do
                         Console.Clear();
                         Console.WriteLine("Devolver carro:\n");
 
+                        Devolucao.Devolver();
                         // Inserir forma de devolver carro
-                        
+
                         Console.WriteLine("\nVeículo Retornado com sucesso!\n");
                         Console.ReadKey();
                         Console.Clear();
