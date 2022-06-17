@@ -21,7 +21,7 @@
             bool verificador = false;
             do
             {
-                Console.Write("Digite o numero do cartão");
+                Console.Write("Digite o numero do cartão: ");
                 numero = long.Parse(Console.ReadLine().Trim());
 
                 if (numero > 13 && numero < 16)
@@ -36,7 +36,7 @@
             do
             {
                 verificador2 = false;
-                Console.Write("Digite a data de validade do cartão (mm/aaaa)");
+                Console.Write("Digite a data de validade do cartão (mm/aaaa): ");
                 dataValidade = int.Parse(Console.ReadLine().Trim().Remove(0, 3));
 
                 if (dataValidade < DateTime.Now.Year)
@@ -48,7 +48,7 @@
             string nomeCartao;
             do
             {
-                Console.WriteLine("Digite o nome escrito no cartão");
+                Console.WriteLine("Digite o nome escrito no cartão: ");
                 nomeCartao = Console.ReadLine().Trim();
             } while (nomeCartao.Length == 0);
 
@@ -63,7 +63,7 @@
             bool verificador = true;
             do
             {
-                Console.Write("Digite o número do cartão");
+                Console.Write("Digite o número do cartão: ");
                 Numero = long.Parse(Console.ReadLine().Trim());
 
                 if (Numero > 13 && Numero < 16)
@@ -76,7 +76,7 @@
             bool verificador2 = false;
             do
             {
-                Console.Write("Digite a data de validade do cartão (mm/aaaa)");
+                Console.Write("Digite a data de validade do cartão (mm/aaaa): ");
                 DataValidade = int.Parse(Console.ReadLine().Trim().Remove(0,3));
 
                 if (DataValidade > DateTime.Now.Year)
@@ -87,7 +87,7 @@
 
             do
             {
-                Console.Write("Digite o nome escrito no cartão");
+                Console.Write("Digite o nome escrito no cartão: ");
                 NomeCartao = Console.ReadLine().Trim();
             } while (NomeCartao.Length == 0);
 
