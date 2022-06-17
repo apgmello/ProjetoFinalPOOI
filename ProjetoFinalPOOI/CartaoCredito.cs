@@ -48,7 +48,7 @@
             string nomeCartao;
             do
             {
-                Console.WriteLine("Digite o nome escrito no cartão: ");
+                Console.Write("Digite o nome escrito no cartão: ");
                 nomeCartao = Console.ReadLine().Trim();
             } while (nomeCartao.Length == 0);
 
