@@ -4,10 +4,15 @@ using ProjetoFinalPOOI;
 Cadastro.Inicializar();
 Funcionario funcionario;
 
-Console.WriteLine("Lets'Carros");
+Console.WriteLine("||=========================||\n"+
+                  "||      LET'S CARROS       ||\n" +
+                  "||-------------------------||\n"+
+                  "|| Muito mais que um carro ||\n"+
+                  "||=========================||\n");
+
 do
 {
-    Console.WriteLine("Entre com o funcionário");
+    Console.WriteLine("Entre com o funcionário: \n");
     var cpf = Pessoa.LerCpf();
     funcionario = Cadastro.BuscarFuncionario(cpf);
     if (funcionario == null)
@@ -15,19 +20,18 @@ do
         Console.WriteLine("Funcionario não encontrado!");
     }
 } while (funcionario == null);
-Console.WriteLine($"Bem vindo(a) {funcionario.Nome}");
+Console.WriteLine($"Bem vindo(a) {funcionario.Nome}!");
 Cadastro.FuncionarioAtual = funcionario;
 Console.ReadKey();
 Console.Clear();
 
-var testeplacas = new List<string> { "AAA1111", "BBB2222", "CCC3333", "DDD4444" }; //remover após substituir por banco de dados
 int opcao;
 bool valido = true;
 
 do
 {
-    Console.WriteLine("||----------------------------------||\n" +
-                      "||            Lets'Carros           ||\n" +
+    Console.WriteLine("||==================================||\n" +
+                      "||           LET'S CARROS           ||\n" +
                       "||----------------------------------||\n" +
                       "||Digite o índice da opção desejada:||\n" +
                       "||----------------------------------||\n" +
@@ -35,7 +39,7 @@ do
                       "||(2) Cadastrar Carro               ||\n" +
                       "||(3) Alugar ou devolver carro      ||\n" +
                       "||(4) Sair                          ||\n" +
-                      "||__________________________________||\n");
+                      "||==================================||\n");
     Console.Write("Opção: ");
 
     valido = int.TryParse(Console.ReadLine(), out opcao);
@@ -65,7 +69,7 @@ do
             do
             {
                 
-                Console.WriteLine("||----------------------------------||\n" +
+                Console.WriteLine("||==================================||\n" +
                                   "||     Alugar ou devolver carro     ||\n" +
                                   "||----------------------------------||\n" +
                                   "||Digite o índice da opção desejada:||\n" +
@@ -73,7 +77,7 @@ do
                                   "||(1) Alugar                        ||\n" +
                                   "||(2) Devolver                      ||\n" +
                                   "||(3) Retornar ao menu anterior     ||\n" +
-                                  "||__________________________________||\n");
+                                  "||==================================||\n");
                 Console.Write("Opção: ");
                 valido = int.TryParse(Console.ReadLine(), out opcao);
 
@@ -85,8 +89,7 @@ do
                         Console.WriteLine("Alugar carro:\n");
                         Aluguel.Alugar();
 
-                        //Inserir forma de alugar carro
-                        Console.WriteLine("\nVeículo Alugado com sucesso!\n");
+                        //Console.WriteLine("\nVeículo Alugado com sucesso!\n");
                         break;
                     case 2:
                         opcao = 0;
@@ -94,7 +97,6 @@ do
                         Console.WriteLine("Devolver carro:\n");
 
                         Devolucao.Devolver();
-                        // Inserir forma de devolver carro
 
                         Console.WriteLine("\nVeículo Retornado com sucesso!\n");
                         Console.ReadKey();

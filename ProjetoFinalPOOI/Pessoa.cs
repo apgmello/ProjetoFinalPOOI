@@ -59,13 +59,13 @@
         }
         private static string LerTelefone()
         {
-            int telefone;
+            long telefone;
             string formato;
             do
             {
                 Console.Write("Telefone somente números: ");
                 formato = Console.ReadLine();
-                if (!int.TryParse(formato, out telefone))
+                if (!long.TryParse(formato, out telefone))
                 {
                     Console.WriteLine("Telefone inválido");
                 }
@@ -99,7 +99,7 @@
             do
             {
                 Console.Write("CPF somente números: ");
-                if (!long.TryParse(Console.ReadLine(), out numero) || numero.ToString().Length < 11)
+                if (!long.TryParse(Console.ReadLine(), out numero) && numero.ToString().Length < 11)
                 {
                     Console.WriteLine("Número inválido");
                 }
