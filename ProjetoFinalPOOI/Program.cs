@@ -2,6 +2,34 @@
 using ProjetoFinalPOOI;
 
 
+using ProjetoFinalPOO_01;
+
+//var pessoa = Pessoa.Ler();
+Cadastro.Inicializar();
+Funcionario funcionario;
+
+Console.WriteLine("Lets'Carros");
+do
+{
+    Console.WriteLine("Entre com o funcionário");
+    var cpf = Pessoa.LerCpf();
+    funcionario = Cadastro.BuscarFuncionario(cpf);
+    if (funcionario == null)
+    {
+        Console.WriteLine("Funcionario não encontrado!");
+    }
+} while (funcionario == null);
+Console.WriteLine($"Bem vindo(a) {funcionario.Nome}");
+Cadastro.FuncionarioAtual = funcionario;
+Console.ReadKey();
+Console.Clear();
+
+Aluguel.Alugar();
+//menu
+Devolucao.Devolver();
+
+/*
+
 var testeplacas = new List<string> { "AAA1111", "BBB2222", "CCC3333", "DDD4444" };
 int opcao;
 var pessoa = Pessoa.Ler();
@@ -61,4 +89,4 @@ switch (opcao)
         break;
 }
 
-
+*/
