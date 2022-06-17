@@ -11,7 +11,7 @@
         public int Ano { get; }
         public long Km { get; }
         public string Modelo { get; }
-        public bool Alugado { get; set; } = false; //***
+        public bool Alugado { get; set; } = false; 
 
 
         public Carro(string placa, string categoria, int ano, long km, string modelo, bool alugado)
@@ -19,7 +19,7 @@
         {
             Placa = placa;
             Categoria = AtribuiValorCategoria(categoria);
-            //ValorCategoria = valorCategoria;
+
             Ano = ano;
             Km = km;
             Modelo = modelo;
@@ -43,24 +43,26 @@
             }
             else
             {
-                ValorCategoria = 0;//Para destacar erro
+                ValorCategoria = 0;
             }
             return categoria;
         }
 
-        public static Carro Ler(List<string> testeplacas) // substituir testeplacas pela lista final*
+        public static Carro Ler() 
         {
-            string placa = LerPlaca(testeplacas);
+            string placa = LerPlaca();
             string categoria = LerCategoria();
             int ano = LerAno();
             long km = LerKm();
             string modelo = LerModelo();
             bool alugado = false;
+            var carro = new Carro(placa, categoria, ano, km, modelo, alugado);
+            Cadastro.Carros.Add(carro);
 
-            return new Carro(placa, categoria, ano, km, modelo, alugado);
+            return carro;
         }
 
-        public static string LerPlaca(List<string> testeplacas) //testeplacas*
+        public static string LerPlaca() 
         {
             string valor = "";
             bool valida = true;
@@ -83,9 +85,9 @@
 
                 else
                 {
-                    foreach (var veiculo in testeplacas) //testeplacas*
+                    foreach (var veiculo in Cadastro.Carros) 
                     {
-                        if (veiculo.ToUpper() == valor.ToUpper())
+                        if (veiculo.Placa.ToUpper() == valor.ToUpper())
                         {
                             Console.WriteLine($"Placa ({valor.ToUpper()}) já existente no sistema.");
                             valida = false;
@@ -197,7 +199,7 @@
             Console.WriteLine("\nDados do Carro:\n");
             Console.WriteLine("Placa: " + Placa);
             Console.WriteLine("Categoria: " + Categoria);
-            Console.WriteLine("Valor da Categoria" + ValorCategoria);
+            Console.WriteLine("Valor da Categoria: R$" + ValorCategoria);
             Console.WriteLine("Ano: " + Ano);
             Console.WriteLine("Kilometragem: " + Km);
             Console.WriteLine("Modelo: " + Modelo);

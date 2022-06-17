@@ -19,7 +19,7 @@
         private static void InicializarFuncionarios()
         {
             Funcionarios.Add(new Funcionario("Ana Mello", new DateOnly(1992, 10, 29), 12345678901, "São Paulo", "(11)99999-9999", 111111111111, 258963, "Atendente"));
-            Funcionarios.Add(new Funcionario("André", new DateOnly(1992, 10, 29), 112345678902, "São Paulo", "(11)99999-9999", 111111111111, 258963, "Atendente"));
+            Funcionarios.Add(new Funcionario("André", new DateOnly(1992, 10, 29), 12345678902, "São Paulo", "(11)99999-9999", 111111111111, 258963, "Atendente"));
             Funcionarios.Add(new Funcionario("Edu", new DateOnly(1992, 10, 29), 12345678903, "São Paulo", "(11)99999-9999", 111111111111, 258963, "Atendente"));
         }
         public static Funcionario BuscarFuncionario(long cpf)
