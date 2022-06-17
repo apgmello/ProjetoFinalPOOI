@@ -4,11 +4,11 @@
     {
         public long Numero { get; set; }
 
-        public DateOnly? DataValidade { get; set; }
-
+        public int DataValidade { get; set; }
+       
         public string? NomeCartao { get; set; }
 
-        public CartaoCredito(long numero, DateOnly dataValidade, string nomeCartao)
+        public CartaoCredito(long numero, int dataValidade, string nomeCartao)
         {
             Numero = numero;
             DataValidade = dataValidade;
@@ -31,15 +31,15 @@
 
             } while (verificador);
 
-            DateOnly dataValidade;
+            int dataValidade;
             bool verificador2 = false;
             do
             {
                 verificador2 = false;
-                Console.Write("Digite a data de validade do cartão");
-                dataValidade = DateOnly.Parse(Console.ReadLine());
+                Console.Write("Digite a data de validade do cartão (mm/aaaa)");
+                dataValidade = int.Parse(Console.ReadLine().Trim().Remove(0, 3));
 
-                if (dataValidade.Year < DateTime.Now.Year)
+                if (dataValidade > DateTime.Now.Year)
                 {
                     verificador2 = true;
                 }
@@ -76,10 +76,10 @@
             bool verificador2 = false;
             do
             {
-                Console.Write("Digite a data de validade do cartão");
-                DataValidade = DateOnly.Parse(Console.ReadLine());
+                Console.Write("Digite a data de validade do cartão (mm/aaaa)");
+                DataValidade = int.Parse(Console.ReadLine().Trim().Remove(0,3));
 
-                if (DataValidade.Value.Year > DateTime.Now.Year)
+                if (DataValidade > DateTime.Now.Year)
                 {
                     verificador2 = true;
                 }
