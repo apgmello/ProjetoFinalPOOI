@@ -52,6 +52,7 @@ do
             Console.Clear();
             Console.WriteLine("Cadastro de Cliente:\n");
             var pessoa = Cliente.Ler();
+            Console.ReadKey();
             break;
         case 2:
             opcao = 0;
