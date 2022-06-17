@@ -2,8 +2,6 @@
 using ProjetoFinalPOOI;
 
 
-using ProjetoFinalPOO_01;
-
 //var pessoa = Pessoa.Ler();
 Cadastro.Inicializar();
 Funcionario funcionario;
