@@ -30,6 +30,7 @@ bool valido = true;
 
 do
 {
+    Console.Clear();
     Console.WriteLine("||==================================||\n" +
                       "||           LET'S CARROS           ||\n" +
                       "||----------------------------------||\n" +
@@ -93,6 +94,8 @@ do
 
 
                         Console.WriteLine("\nVeículo Alugado com sucesso!\n");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 2:
                         opcao = 0;
