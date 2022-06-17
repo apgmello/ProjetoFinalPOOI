@@ -67,7 +67,7 @@
 
                 if (Numero > 13 && Numero < 16)
                 {
-                    verificador = false;
+                    verificador = true;
                 }
 
             } while (verificador);

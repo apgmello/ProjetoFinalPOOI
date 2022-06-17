@@ -2,9 +2,12 @@
 using ProjetoFinalPOOI;
 
 
-var pessoa = Pessoa.Ler();
-
+var testeplacas = new List<string> { "AAA1111", "BBB2222", "CCC3333", "DDD4444" };
 int opcao;
+var pessoa = Pessoa.Ler();
+var carro = Carro.Ler(testeplacas);
+
+
 
 //uns objetos aqui
 
