@@ -87,15 +87,19 @@ do
                         opcao = 0;
                         Console.Clear();
                         Console.WriteLine("Alugar carro:\n");
+
+                        Cadastro.FuncionarioAtual = funcionario;
                         Aluguel.Alugar();
 
-                        //Console.WriteLine("\nVeículo Alugado com sucesso!\n");
+
+                        Console.WriteLine("\nVeículo Alugado com sucesso!\n");
                         break;
                     case 2:
                         opcao = 0;
                         Console.Clear();
                         Console.WriteLine("Devolver carro:\n");
 
+                        Cadastro.FuncionarioAtual = funcionario;
                         Devolucao.Devolver();
 
                         Console.WriteLine("\nVeículo Retornado com sucesso!\n");
