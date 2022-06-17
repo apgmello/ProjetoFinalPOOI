@@ -48,9 +48,9 @@
             return categoria;
         }
 
-        public static Carro Ler()
+        public static Carro Ler(List <string> testeplacas)
         {
-            string placa = LerPlaca();
+            string placa = LerPlaca(testeplacas);
             string categoria = LerCategoria();
             int ano = LerAno();
             long km = LerKm();
@@ -60,7 +60,7 @@
             return new Carro(placa, categoria, ano, km, modelo, alugado);
         }
 
-        public static string LerPlaca()
+        public static string LerPlaca(List <string> testeplacas)
         {
             string valor = "";
             bool valida = true;
@@ -72,14 +72,27 @@
                 Console.Write("Insira a placa do novo veículo (XXX0000): ");
                 valor = Console.ReadLine();
 
+                
+
                 if (valor.Length != 7)
                 {
                     Console.WriteLine("Placa inválida.");
                     valida = false;
+ 
                 }
 
                 else
                 {
+                    foreach (var veiculo in testeplacas)
+                    {
+                        if (veiculo.ToUpper() == valor.ToUpper())
+                        {
+                            Console.WriteLine($"Placa ({valor.ToUpper()}) já existente no sistema.");
+                            valida = false;
+                            break;
+                        }
+                    }
+
                     char[] palavra = valor.ToCharArray();
 
                     for (int i = 0; i < 3; i++)
