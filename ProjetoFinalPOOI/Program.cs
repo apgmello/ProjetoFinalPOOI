@@ -17,7 +17,7 @@ do
 } while (funcionario == null);
 Console.WriteLine($"Bem vindo(a) {funcionario.Nome}");
 Cadastro.FuncionarioAtual = funcionario;
-Console.ReadKey();
+Console.Clear();
 
 var testeplacas = new List<string> { "AAA1111", "BBB2222", "CCC3333", "DDD4444" }; //remover após substituir por banco de dados
 int opcao;
