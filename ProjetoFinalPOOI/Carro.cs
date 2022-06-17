@@ -69,7 +69,7 @@
             do
             {
                 valida = true;
-                Console.Write("Insira a placa do novo veículo (XXX0000): ");
+                Console.Write("\nInsira a placa do novo veículo (XXX0000): ");
                 valor = Console.ReadLine();
 
 
@@ -99,7 +99,7 @@
                     {
                         if (char.IsDigit(palavra[i]))
                         {
-                            Console.WriteLine($"Letra {palavra[i]} na posição {i + 1} inválida.");
+                            Console.WriteLine($"Letra '{palavra[i]}' na posição {i + 1} inválida.");
                             valida = false;
                         }
                     }
@@ -107,7 +107,7 @@
                     {
                         if (!char.IsDigit(palavra[i]))
                         {
-                            Console.WriteLine($"Número {palavra[i]} na posição {i + 1} inválido.");
+                            Console.WriteLine($"Número '{palavra[i]}' na posição {i + 1} inválido.");
                             valida = false;
                         }
                     }
@@ -125,10 +125,11 @@
             {
                 valida = true;
 
-                Console.Write("Insira a categoria do carro (A,B,C): ");
+                Console.Write("\nInsira a categoria do carro (A,B,C): ");
                 valor = Console.ReadLine();
+                valor = valor.ToUpper();
 
-                if (valor.ToUpper() != "A" && valor.ToUpper() != "B" && valor.ToUpper() != "C")
+                if (valor != "A" && valor != "B" && valor != "C")
                 {
                     valida = false;
                     Console.WriteLine("Insira uma categoria válida.");
@@ -148,10 +149,10 @@
             {
                 valida = true;
 
-                Console.Write("Insira o ano do veículo (mais novo do que 2019): ");
+                Console.Write("\nInsira o ano do veículo (mais novo do que 2019): ");
                 valida = int.TryParse(Console.ReadLine(), out valor);
 
-            } while (!valida && valor < 2020);
+            } while (!valida || valor < 2020 || valor>DateTime.Now.Year);
 
 
             return valor;
@@ -166,7 +167,7 @@
             {
                 valida = true;
 
-                Console.Write("Insira a quilometragem do veículo: ");
+                Console.Write("\nInsira a quilometragem do veículo: ");
                 valida = long.TryParse(Console.ReadLine(), out valor);
 
             } while (!valida && valor < 0);
@@ -181,17 +182,19 @@
 
             do
             {
-                Console.Write("Insira o modelo do veículo: ");
+                Console.Write("\nInsira o modelo do veículo: ");
                 valor = Console.ReadLine();
 
             } while (valor == "");
 
 
             return valor;
+
+
         }
         public void DadosV()
         {
-            Console.WriteLine("Dados do Carro:");
+            Console.WriteLine("\nDados do Carro:\n");
             Console.WriteLine("Placa: " + Placa);
             Console.WriteLine("Categoria: " + Categoria);
             Console.WriteLine("Valor da Categoria" + ValorCategoria);
