@@ -72,12 +72,16 @@
                 Console.Write("Digite o número do cartão: ");
                 Numero = long.Parse(Console.ReadLine().Trim());
 
-                if (Numero > 13 && Numero < 16)
+                if (Numero.ToString().Length >= 13 && Numero.ToString().Length <= 16)
                 {
                     verificador = true;
                 }
+                else
+                {
+                    Console.WriteLine("Número inválido.");
+                }
 
-            } while (verificador);
+            } while (!verificador);
 
             bool verificador2 = false;
             do
@@ -87,6 +91,7 @@
 
                 if (DataValidade > DateTime.Now.Year)
                 {
+                    Console.WriteLine("Data inválida ou cartão vencido.");
                     verificador2 = true;
                 }
             } while (verificador2);
