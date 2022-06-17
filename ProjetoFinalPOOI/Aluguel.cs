@@ -34,7 +34,7 @@
 
             Console.Clear();
 
-            Console.WriteLine($"Novo aluguel para {cliente.Nome}");
+            Console.WriteLine($"Novo aluguel para {cliente.Nome}.");
             Console.WriteLine("----------------------------------");
             Cadastro.ListarCarrosDisponiveis();
             Carro carro;
@@ -55,7 +55,8 @@
 
             Cadastro.AdicionarAluguel(new Aluguel(cliente, carro));
             carro.Alugado = false;
-            Console.WriteLine($"Aluguel do carro {carro.Modelo} confirmado para o cliente {cliente.Nome}");
+            Console.WriteLine($"Aluguel do carro {carro.Modelo} confirmado para o cliente {cliente.Nome}.");
+
         }
     }
 }

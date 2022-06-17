@@ -67,7 +67,7 @@
                 formato = Console.ReadLine();
                 if (!long.TryParse(formato, out telefone))
                 {
-                    Console.WriteLine("Telefone inválido");
+                    Console.WriteLine("Telefone inválido!");
                 }
             } while (formato.Length < 11);
             formato.Insert(0, "(");
@@ -101,7 +101,7 @@
                 Console.Write("CPF somente números: ");
                 if (!long.TryParse(Console.ReadLine(), out numero) && numero.ToString().Length < 11)
                 {
-                    Console.WriteLine("Número inválido");
+                    Console.WriteLine("Número inválido!");
                 }
             } while (numero.ToString().Length < 11);
 
