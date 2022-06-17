@@ -68,7 +68,7 @@ do
                         Console.WriteLine("Alugar carro:\n");
 
                         //Inserir forma de alugar carro
-
+                        Console.WriteLine("\nVeículo Alugado com sucesso!\n");
                         break;
                     case 2:
                         opcao = 0;
@@ -77,7 +77,7 @@ do
 
                         // Inserir forma de devolver carro
                         
-                        Console.WriteLine("\nVeículo Cadastrado com sucesso!\n");
+                        Console.WriteLine("\nVeículo Retornado com sucesso!\n");
                         Console.ReadKey();
                         Console.Clear();
 
