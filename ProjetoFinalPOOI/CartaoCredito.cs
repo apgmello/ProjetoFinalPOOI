@@ -39,7 +39,7 @@
                 Console.Write("Digite a data de validade do cartão (mm/aaaa)");
                 dataValidade = int.Parse(Console.ReadLine().Trim().Remove(0, 3));
 
-                if (dataValidade > DateTime.Now.Year)
+                if (dataValidade < DateTime.Now.Year)
                 {
                     verificador2 = true;
                 }

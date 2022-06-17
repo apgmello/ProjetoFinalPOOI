@@ -73,8 +73,8 @@
         //----------------------------------
         private static void InicializarClientes()
         {
-            AdicionarCliente(new Cliente("Amanda Mantovani", new DateOnly(1990, 03, 15), 12345678904, "Rua x, 1157, Bairro J, São Paulo", "(11)99999-4444", 12345678910, " ", new CartaoCredito(1234567890123, new DateOnly(2029, 12, 1), "Amanda M")));
-            AdicionarCliente(new Cliente("Michael Tadeu", new DateOnly(1988, 05, 20), 12345678904, "Rua y, 1157, Bairro D, São Paulo", "(11)99999-5555", 12345678911, " ", new CartaoCredito(1234567890563, new DateOnly(2029, 11, 1), "Michael T")));
+            AdicionarCliente(new Cliente("Amanda Mantovani", new DateOnly(1990, 03, 15), 12345678904, "Rua x, 1157, Bairro J, São Paulo", "(11)99999-4444", 12345678910, " ", new CartaoCredito(1234567890123, 2029, "Amanda M")));
+            AdicionarCliente(new Cliente("Michael Tadeu", new DateOnly(1988, 05, 20), 12345678904, "Rua y, 1157, Bairro D, São Paulo", "(11)99999-5555", 12345678911, " ", new CartaoCredito(1234567890563, 2029, "Michael T")));
         }
         public static void AdicionarCliente(Cliente cliente)
         {
