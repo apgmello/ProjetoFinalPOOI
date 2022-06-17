@@ -35,10 +35,11 @@
             bool verificador2 = false;
             do
             {
+                verificador2 = false;
                 Console.Write("Digite a data de validade do cartão");
                 dataValidade = DateOnly.Parse(Console.ReadLine());
 
-                if (dataValidade.Year > DateTime.Now.Year)
+                if (dataValidade.Year < DateTime.Now.Year)
                 {
                     verificador2 = true;
                 }
@@ -49,7 +50,7 @@
             {
                 Console.WriteLine("Digite o nome escrito no cartão");
                 nomeCartao = Console.ReadLine().Trim();
-            }while(nomeCartao.Length == 0);
+            } while (nomeCartao.Length == 0);
 
 
             return new CartaoCredito(numero, dataValidade, nomeCartao);
