@@ -1,7 +1,23 @@
 ﻿
 using ProjetoFinalPOOI;
 
+Cadastro.Inicializar();
+Funcionario funcionario;
 
+Console.WriteLine("Lets'Carros");
+do
+{
+    Console.WriteLine("Entre com o funcionário");
+    var cpf = Pessoa.LerCpf();
+    funcionario = Cadastro.BuscarFuncionario(cpf);
+    if (funcionario == null)
+    {
+        Console.WriteLine("Funcionario não encontrado!");
+    }
+} while (funcionario == null);
+Console.WriteLine($"Bem vindo(a) {funcionario.Nome}");
+Cadastro.FuncionarioAtual = funcionario;
+Console.ReadKey();
 
 var testeplacas = new List<string> { "AAA1111", "BBB2222", "CCC3333", "DDD4444" }; //remover após substituir por banco de dados
 int opcao;
@@ -29,7 +45,7 @@ do
             opcao = 0;
             Console.Clear();
             Console.WriteLine("Cadastro de Cliente:\n");
-            var pessoa = Pessoa.Ler();
+            var pessoa = Cliente.Ler();
             break;
         case 2:
             opcao = 0;
