@@ -45,7 +45,7 @@
                 var placa = Console.ReadLine();
 
                 carro = Cadastro.BuscarCarro(placa);
-                if (carro.Alugado)
+                if (carro == null || carro.Alugado)
                 {
                     Console.WriteLine("Veículo indisponível!");
                     carro = null;

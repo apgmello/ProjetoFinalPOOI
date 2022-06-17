@@ -5,7 +5,7 @@
         public long Numero { get; set; }
 
         public int DataValidade { get; set; }
-       
+
         public string? NomeCartao { get; set; }
 
         public CartaoCredito(long numero, int dataValidade, string nomeCartao)
@@ -17,19 +17,23 @@
 
         public static CartaoCredito Ler()
         {
-            long numero = 0;
+            long numero;
             bool verificador = false;
             do
             {
                 Console.Write("Digite o numero do cartão: ");
                 numero = long.Parse(Console.ReadLine().Trim());
 
-                if (numero > 13 && numero < 16)
+                if (numero.ToString().Length >= 13 && numero.ToString().Length <= 16)
                 {
                     verificador = true;
                 }
+                else
+                {
+                    Console.WriteLine("Número inválido.");
+                }
 
-            } while (verificador);
+            } while (!verificador);
 
             int dataValidade;
             bool verificador2 = false;
@@ -41,8 +45,10 @@
 
                 if (dataValidade < DateTime.Now.Year)
                 {
+                    Console.WriteLine("Data inválida ou cartão vencido.");
                     verificador2 = true;
                 }
+
             } while (verificador2);
 
             string nomeCartao;
@@ -66,21 +72,26 @@
                 Console.Write("Digite o número do cartão: ");
                 Numero = long.Parse(Console.ReadLine().Trim());
 
-                if (Numero > 13 && Numero < 16)
+                if (Numero.ToString().Length >= 13 && Numero.ToString().Length <= 16)
                 {
                     verificador = true;
                 }
+                else
+                {
+                    Console.WriteLine("Número inválido.");
+                }
 
-            } while (verificador);
+            } while (!verificador);
 
             bool verificador2 = false;
             do
             {
                 Console.Write("Digite a data de validade do cartão (mm/aaaa): ");
-                DataValidade = int.Parse(Console.ReadLine().Trim().Remove(0,3));
+                DataValidade = int.Parse(Console.ReadLine().Trim().Remove(0, 3));
 
                 if (DataValidade > DateTime.Now.Year)
                 {
+                    Console.WriteLine("Data inválida ou cartão vencido.");
                     verificador2 = true;
                 }
             } while (verificador2);
