@@ -17,14 +17,15 @@
 
         public static CartaoCredito Ler()
         {
-            long numero = 0;
+            long numero;
             bool verificador = false;
             do
             {
+                verificador = false;
                 Console.Write("Digite o numero do cartão: ");
                 numero = long.Parse(Console.ReadLine().Trim());
 
-                if (numero > 13 && numero < 16)
+                if (numero >= 13 && numero <= 16)
                 {
                     verificador = true;
                 }
