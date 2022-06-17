@@ -1,4 +1,4 @@
-﻿namespace ProjetoFinalPOO_01
+﻿namespace ProjetoFinalPOOI
 {
     internal static class Cadastro
     {
