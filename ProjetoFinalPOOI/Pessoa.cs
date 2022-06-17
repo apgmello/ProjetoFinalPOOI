@@ -3,16 +3,13 @@
     public class Pessoa
     {
         public string Nome { get; }
-        DateOnly DataNascimento { get; }
+        public DateOnly DataNascimento { get; }
         public long Cpf { get; }
         public string Endereco { get; }
         public string Telefone { get; }
         public long Cnh { get; }
-        public string Categoria { get; }
 
-        public Pessoa() { }
-
-        public Pessoa(string nome, DateOnly dataNascimento, long cpf, string endereco, string telefone, long cnh, string categoria)
+        public Pessoa(string nome, DateOnly dataNascimento, long cpf, string endereco, string telefone, long cnh)
         {
             Nome = nome;
             DataNascimento = dataNascimento;
@@ -20,7 +17,6 @@
             Endereco = endereco;
             Telefone = telefone;
             Cnh = cnh;
-            Categoria = categoria;
         }
         public static Pessoa Ler()
         {
@@ -30,34 +26,20 @@
             string endereco = LerEndereco();
             string telefone = LerTelefone();
             long cnh = LerCnh();
-            string categoria = LerCategoria();
-            return new Pessoa(nome, dataNascimento, cpf, endereco, telefone, cnh, categoria); //retorna uma instancia de Pessoa
+            return new Pessoa(nome, dataNascimento, cpf, endereco, telefone, cnh); //retorna uma instancia de Pessoa
         }
         private static DateOnly LerDataNascimento()
         {
             DateOnly dataNascimento;
-            Console.Write("Data de nascimento dd/mm/aaaa: ");
-            if (!DateOnly.TryParse(Console.ReadLine(), out dataNascimento) || dataNascimento > new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day))
-            {
-                Console.WriteLine("Data inválida!");
-            }
-
-            return dataNascimento;
-        }
-        private static string LerCategoria()
-        {
-            string categoria;
             do
             {
-                Console.Write("Categoria CNH: ");
-                categoria = Console.ReadLine().Trim().ToUpper();
-                if (categoria != "A" && categoria != "AB")
+                Console.Write("Data de nascimento dd/mm/aaaa: ");
+                if (!DateOnly.TryParse(Console.ReadLine(), out dataNascimento) || dataNascimento > new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day))
                 {
-                    Console.WriteLine("Categoria inválida!");
+                    Console.WriteLine("Data inválida!");
                 }
-            } while (categoria != "A" && categoria != "AB");
-
-            return categoria;
+            } while (dataNascimento > new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day));
+            return dataNascimento;
         }
         private static long LerCnh()
         {
@@ -111,19 +93,17 @@
 
             return endereco;
         }
-        private static long LerCpf()
+        public static long LerCpf()
         {
             long numero;
-            string documento;
             do
             {
                 Console.Write("CPF somente números: ");
-                documento = Console.ReadLine();
-                if (!long.TryParse(documento, out numero))
+                if (!long.TryParse(Console.ReadLine(), out numero) || numero.ToString().Length < 11)
                 {
                     Console.WriteLine("Número inválido");
                 }
-            } while (documento.Length < 11);
+            } while (numero.ToString().Length < 11);
 
             return numero;
         }
@@ -146,3 +126,4 @@
         }
     }
 }
+
