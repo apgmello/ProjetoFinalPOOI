@@ -18,11 +18,14 @@
             Telefone = telefone;
             Cnh = cnh;
         }
-        public static Pessoa Ler()
+        public static Pessoa Ler(long cpf = 0)
         {
+            if (cpf == 0)
+            {
+                cpf = LerCpf();
+            }
             string nome = LerNome();
             DateOnly dataNascimento = LerDataNascimento();
-            long cpf = LerCpf();
             string endereco = LerEndereco();
             string telefone = LerTelefone();
             long cnh = LerCnh();
@@ -99,7 +102,7 @@
             do
             {
                 Console.Write("CPF somente números: ");
-                if (!long.TryParse(Console.ReadLine(), out numero) && numero.ToString().Length < 11)
+                if (!long.TryParse(Console.ReadLine(), out numero) && numero.ToString().Length < 11) //se o primeiro numero for zero da erro
                 {
                     Console.WriteLine("Número inválido!");
                 }

@@ -51,7 +51,17 @@ do
             opcao = 0;
             Console.Clear();
             Console.WriteLine("Cadastro de Cliente:\n");
-            var pessoa = Cliente.Ler();
+
+            var cpf = Pessoa.LerCpf();
+
+            if(Cadastro.BuscarCliente(cpf) != null)
+            {
+                Console.WriteLine("Cliente já cadastrado!");
+                Console.ReadKey();
+                break;
+            }
+            var pessoa = Cliente.Ler(cpf);
+            Cadastro.AdicionarCliente(pessoa);
             break;
         case 2:
             opcao = 0;

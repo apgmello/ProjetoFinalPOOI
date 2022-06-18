@@ -10,9 +10,9 @@
             this.Obs = obs;
             CartaoCredito = cartaoCredito;
         }
-        public static new Cliente Ler()
+        public static new Cliente Ler(long cpf)
         {
-            var pessoa = Pessoa.Ler();
+            var pessoa = Pessoa.Ler(cpf);
             var obs = LerObs();
             var cartao = CartaoCredito.Ler();
             return new Cliente(pessoa.Nome, pessoa.DataNascimento, pessoa.Cpf, pessoa.Endereco, pessoa.Telefone, pessoa.Cnh, obs, cartao);

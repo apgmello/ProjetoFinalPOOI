@@ -22,7 +22,7 @@
             do
             {
                 Console.Write("Digite o numero do cartão: ");
-                numero = long.Parse(Console.ReadLine().Trim());
+                long.TryParse(Console.ReadLine().Trim(), out numero);
 
                 if (numero.ToString().Length >= 13 && numero.ToString().Length <= 16)
                 {

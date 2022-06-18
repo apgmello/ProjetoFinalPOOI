@@ -78,6 +78,12 @@
         }
         public static void AdicionarCliente(Cliente cliente)
         {
+            if (BuscarCliente(cliente.Cpf) != null)
+            {
+                Console.WriteLine("Cliente já cadastrado!");
+                return;
+            }
+
             Clientes.Add(cliente);
         }
         public static Cliente BuscarCliente(long cpf)
@@ -91,6 +97,7 @@
             }
             return null;
         }
+
         //----------------------------------
         public static void AdicionarAluguel(Aluguel aluguel)
         {
