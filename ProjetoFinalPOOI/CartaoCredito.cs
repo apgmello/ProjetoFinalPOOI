@@ -61,49 +61,5 @@
 
             return new CartaoCredito(numero, dataValidade, nomeCartao);
         }
-
-
-        public void AlterarCadastro()
-        {
-            long numero = 0;
-            bool verificador = true;
-            do
-            {
-                Console.Write("Digite o número do cartão: ");
-                Numero = long.Parse(Console.ReadLine().Trim());
-
-                if (Numero.ToString().Length >= 13 && Numero.ToString().Length <= 16)
-                {
-                    verificador = true;
-                }
-                else
-                {
-                    Console.WriteLine("Número inválido.");
-                }
-
-            } while (!verificador);
-
-            bool verificador2 = false;
-            do
-            {
-                Console.Write("Digite a data de validade do cartão (mm/aaaa): ");
-                DataValidade = int.Parse(Console.ReadLine().Trim().Remove(0, 3));
-
-                if (DataValidade > DateTime.Now.Year)
-                {
-                    Console.WriteLine("Data inválida ou cartão vencido.");
-                    verificador2 = true;
-                }
-            } while (verificador2);
-
-            do
-            {
-                Console.Write("Digite o nome escrito no cartão: ");
-                NomeCartao = Console.ReadLine().Trim();
-            } while (NomeCartao.Length == 0);
-
-
-        }
-
     }
 }
