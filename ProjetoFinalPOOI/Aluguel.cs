@@ -41,6 +41,7 @@
 
             do
             {
+                Console.WriteLine("-------------------------------");
                 Console.Write("\nDigite a placa: ");
                 var placa = Console.ReadLine();
 

@@ -38,7 +38,7 @@ do
                       "||Digite o índice da opção desejada:||\n" +
                       "||----------------------------------||\n" +
                       "||(1) Cadastrar cliente             ||\n" +
-                      "||(2) Cadastrar Carro               ||\n" +
+                      "||(2) Cadastrar carro               ||\n" +
                       "||(3) Alugar ou devolver carro      ||\n" +
                       "||(4) Sair                          ||\n" +
                       "||==================================||\n");
@@ -51,7 +51,7 @@ do
         case 1:
             opcao = 0;
             Console.Clear();
-            Console.WriteLine("Cadastro de Cliente:\n");
+            Console.WriteLine("Cadastro de Cliente: \n");
 
             var cpf = Pessoa.LerCpf();
             Console.Clear();
@@ -69,7 +69,7 @@ do
         case 2:
             opcao = 0;
             Console.Clear();
-            Console.WriteLine("Cadastro de Veículo:");
+            Console.WriteLine("Cadastro de Veículo: ");
             var carro = Carro.Ler(); 
             carro.DadosV();
             Console.WriteLine("\nVeículo Cadastrado com sucesso!\n");
@@ -100,7 +100,7 @@ do
                     case 1:
                         opcao = 0;
                         Console.Clear();
-                        Console.WriteLine("Alugar carro:\n");
+                        Console.WriteLine("Alugar carro: \n");
 
                         Cadastro.FuncionarioAtual = funcionario;
                         Aluguel.Alugar();
@@ -110,7 +110,7 @@ do
                     case 2:
                         opcao = 0;
                         Console.Clear();
-                        Console.WriteLine("Devolver carro:\n");
+                        Console.WriteLine("Devolver carro: \n");
 
                         Cadastro.FuncionarioAtual = funcionario;
                         Devolucao.Devolver();
@@ -124,7 +124,7 @@ do
                         Console.Clear();
                         break;
                     default:
-                        Console.WriteLine("Opção inválida, tente novamente.\n");
+                        Console.WriteLine("Opção inválida, tente novamente!\n");
                         valido = false;
                         break;
 
@@ -135,7 +135,7 @@ do
             break;
 
         default:
-            Console.WriteLine("Opção inválida, tente novamente.\n");
+            Console.WriteLine("Opção inválida, tente novamente!\n");
             valido = false;
             break;
 
