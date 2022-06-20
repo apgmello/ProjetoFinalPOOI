@@ -29,7 +29,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProjetoFinalPOOI.CartaoCredito" Collapsed="true">
-    <Position X="3" Y="3.5" Width="1.5" />
+    <Position X="1.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAIAAAAAAAQAAAAAAAAAAAAAAABABAAA=</HashCode>
       <FileName>CartaoCredito.cs</FileName>
