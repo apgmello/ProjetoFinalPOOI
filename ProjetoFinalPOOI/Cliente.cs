@@ -25,6 +25,7 @@
         public void DadosC()
         {
             Console.Write("\nDados do Cliente");
+            Console.Write("\n-------------------------------------------");
             Console.Write("\nNome do Cliente: " + Nome);
             Console.Write("\nData de nascimento: " + DataNascimento);
             Console.Write("\nCPF: " + Cpf);
