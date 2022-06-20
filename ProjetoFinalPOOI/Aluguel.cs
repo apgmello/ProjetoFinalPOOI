@@ -41,7 +41,7 @@
 
             do
             {
-                Console.Write("Digite a placa: ");
+                Console.Write("\nDigite a placa: ");
                 var placa = Console.ReadLine();
 
                 carro = Cadastro.BuscarCarro(placa);
@@ -52,7 +52,7 @@
                 }
 
             } while (carro == null);
-
+            Console.Clear();
             Cadastro.AdicionarAluguel(new Aluguel(cliente, carro));
             carro.Alugado = false;
             Console.WriteLine($"Aluguel do carro {carro.Modelo} confirmado para o cliente {cliente.Nome}.");

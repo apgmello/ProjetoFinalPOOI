@@ -22,5 +22,19 @@
             Console.Write("Observação: ");
             return Console.ReadLine();
         }
+        public void DadosC()
+        {
+            Console.Write("\nDados do Cliente");
+            Console.Write("\nNome do Cliente: " + Nome);
+            Console.Write("\nData de nascimento: " + DataNascimento);
+            Console.Write("\nCPF: " + Cpf);
+            Console.Write("\nEnderço: " + Endereco);
+            Console.Write("\nTelefone: " + Telefone);
+            Console.Write("\nCNH: " + Cnh);
+            Console.Write("\nNúmero do cartão de crédito: " + CartaoCredito.Numero);
+            Console.Write("\nData de validade do cartão: " + CartaoCredito.DataValidade);
+            Console.Write("\nNome no cartão: " + CartaoCredito.NomeCartao);
+
+        }
     }
 }

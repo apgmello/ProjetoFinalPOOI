@@ -52,11 +52,11 @@
             {
                 Console.Write("CNH somente números: ");
                 documento = Console.ReadLine();
-                if (!long.TryParse(documento, out numero))
+                if (!long.TryParse(documento, out numero) || documento.Length != 11)
                 {
                     Console.WriteLine("Número inválido");
                 }
-            } while (documento.Length < 11);
+            } while (documento.Length != 11);
 
             return numero;
         }
@@ -102,11 +102,11 @@
             do
             {
                 Console.Write("CPF somente números: ");
-                if (!long.TryParse(Console.ReadLine(), out numero) && numero.ToString().Length < 11) //se o primeiro numero for zero da erro
+                if (!long.TryParse(Console.ReadLine(), out numero) && numero.ToString().Length != 11) //se o primeiro numero for zero da erro
                 {
                     Console.WriteLine("Número inválido!");
                 }
-            } while (numero.ToString().Length < 11);
+            } while (numero.ToString().Length != 11);
 
             return numero;
         }

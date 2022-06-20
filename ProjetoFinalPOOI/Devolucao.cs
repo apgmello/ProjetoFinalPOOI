@@ -10,7 +10,7 @@
             long cpf;
             do
             {
-                Console.Write("Digite o cpf: ");
+                Console.Write("Digite o CPF: ");
                 if (!long.TryParse(Console.ReadLine(), out cpf) || cpf.ToString().Length < 11)
                 {
                     Console.WriteLine("Número inválido");

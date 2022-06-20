@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ProjetoFinalPOOI.Pessoa" Collapsed="true">
+    <Position X="4.25" Y="1.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>CAABAAAAgAAQMIAAAACAAAAAAAIAAAAEAAAAAAGAEAA=</HashCode>
+      <FileName>Pessoa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjetoFinalPOOI.Cliente" Collapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAQAAAIAAACAAAAAAAAAAAAAAAAAAgQAAAAA=</HashCode>
+      <FileName>Cliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjetoFinalPOOI.Funcionario" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Funcionario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjetoFinalPOOI.Carro" Collapsed="true">
+    <Position X="7.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAEAAAEAAAAAIAhAAAiCAgAAEAAABCgAQgBgAAAAAA=</HashCode>
+      <FileName>Carro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjetoFinalPOOI.CartaoCredito" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAQAAAAAAAAAAAAAAABABAAA=</HashCode>
+      <FileName>CartaoCredito.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjetoFinalPOOI.Devolucao" Collapsed="true">
+    <Position X="6.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEgAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Devolucao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjetoFinalPOOI.Cadastro" Collapsed="true">
+    <Position X="4.25" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AgAgAAAACQSQIAAAAASAgAAAAAAAAAAEAAhgBSAAAAA=</HashCode>
+      <FileName>Cadastro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjetoFinalPOOI.Aluguel" Collapsed="true">
+    <Position X="8.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAACAAAAAAAAACAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Aluguel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

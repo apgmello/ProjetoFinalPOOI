@@ -17,10 +17,11 @@ do
     funcionario = Cadastro.BuscarFuncionario(cpf);
     if (funcionario == null)
     {
-        Console.WriteLine("Funcionario não encontrado!");
+        Console.Clear();
+        Console.WriteLine("Funcionario não encontrado!\n");
     }
 } while (funcionario == null);
-Console.WriteLine($"Bem vindo(a) {funcionario.Nome}!");
+Console.WriteLine($"\nBem vindo(a) {funcionario.Nome}!");
 Cadastro.FuncionarioAtual = funcionario;
 Console.ReadKey();
 Console.Clear();
@@ -53,10 +54,12 @@ do
             Console.WriteLine("Cadastro de Cliente:\n");
 
             var cpf = Pessoa.LerCpf();
+            Console.Clear();
 
             if(Cadastro.BuscarCliente(cpf) != null)
             {
                 Console.WriteLine("Cliente já cadastrado!");
+                Cadastro.BuscarCliente(cpf).DadosC();
                 Console.ReadKey();
                 break;
             }
@@ -101,9 +104,6 @@ do
 
                         Cadastro.FuncionarioAtual = funcionario;
                         Aluguel.Alugar();
-
-
-                        Console.WriteLine("\nVeículo Alugado com sucesso!\n");
                         Console.ReadKey();
                         Console.Clear();
                         break;
