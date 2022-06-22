@@ -72,7 +72,7 @@
                 {
                     Console.WriteLine("Telefone inválido!");
                 }
-            } while (formato.Length < 11);
+            } while (formato.Length == 10);
             formato.Insert(0, "(");
             formato.Insert(3, ")");
             formato.Insert(9, "-");

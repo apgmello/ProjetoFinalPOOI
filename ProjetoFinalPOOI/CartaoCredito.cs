@@ -22,7 +22,7 @@
             do
             {
                 verificador = false;
-                Console.Write("Digite o numero do cartão: ");
+                Console.Write("Digite o número do cartão: ");
                 long.TryParse(Console.ReadLine().Trim(), out numero);
 
                 if (numero.ToString().Length < 13 || numero.ToString().Length > 16)

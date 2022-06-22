@@ -43,7 +43,7 @@
                 } while (dataCerta == false);
 
                 int diasAlugados;
-                diasAlugados = dataDevolucao.Day - aluguel.DataAluguel.Day;
+                diasAlugados = dataDevolucao.DayNumber - aluguel.DataAluguel.DayNumber;
 
                 string limpo;
                 do
@@ -99,6 +99,7 @@
                     valorPagar += diasAlugados * aluguel.Carro.ValorCategoria;
                     desconto = "0%";
                 }
+                aluguel.Carro.Alugado = false;
                 Cadastro.RemoverAluguel(aluguel);
                 Console.WriteLine($"Aluguel do {aluguel.Carro.Modelo} para o cliente {aluguel.Cliente.Nome} finalizado!");
                 Console.WriteLine("-------------------------");
@@ -110,6 +111,7 @@
                 Console.WriteLine($"Caro limpo: {limpo}");
                 Console.WriteLine($"Carro batido: {batido}");
                 Console.WriteLine($"Perda total: {perdaTotal}");
+                Console.WriteLine($"Safra Seguros");
                 Console.WriteLine($"Valor a Pagar: {valorPagar:C2}");
                 Console.WriteLine("-------------------------");
             }
