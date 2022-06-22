@@ -45,7 +45,7 @@
             {
                 ValorCategoria = 0;
             }
-            return categoria;
+            return categoria.ToUpper();
         }
 
         public static Carro Ler() 
