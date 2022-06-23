@@ -65,6 +65,9 @@ do
             }
             var pessoa = Cliente.Ler(cpf);
             Cadastro.AdicionarCliente(pessoa);
+            Console.WriteLine("\nCliente cadastrado com sucesso!\n");
+            Cadastro.BuscarCliente(cpf).DadosC();
+            Console.ReadKey();
             break;
         case 2:
             opcao = 0;

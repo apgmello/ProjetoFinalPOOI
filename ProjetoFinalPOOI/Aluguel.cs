@@ -55,7 +55,7 @@
             } while (carro == null);
             Console.Clear();
             Cadastro.AdicionarAluguel(new Aluguel(cliente, carro));
-            carro.Alugado = false;
+            carro.Alugado = true;
             Console.WriteLine($"Aluguel do carro {carro.Modelo} confirmado para o cliente {cliente.Nome}.");
 
         }
