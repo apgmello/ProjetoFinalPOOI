@@ -2,6 +2,7 @@
 {
     internal static class Cadastro
     {
+        //// Arquivo Alterado!
         public static Funcionario FuncionarioAtual { get; set; }
 
         public static List<Carro> Carros { get; } = new List<Carro>();
